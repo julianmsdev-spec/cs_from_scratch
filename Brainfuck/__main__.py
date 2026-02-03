@@ -1,7 +1,7 @@
 # Brainfuck/__main__.py
 from argparse import ArgumentParser
 
-from brainfuck import Brainfuck
+from Brainfuck.brainfuck import Brainfuck
 
 if __name__ == "__main__":
     # Parse the file argument

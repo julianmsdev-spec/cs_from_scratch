@@ -26,7 +26,7 @@ class Brainfuck:
                 case "-":
                     cells[cell_index] = clamp0_255_wraparound(cells[cell_index] - 1)
                 case ".":
-                    print(chr(cells[cell_index]), end="", flush=True)
+                    print(chr(cells[cell_index]), end='', flush=True)
                 case ",":
                     cells[cell_index] = clamp0_255_wraparound(int(input()))
                 case "[":
@@ -39,7 +39,7 @@ class Brainfuck:
                         instruction_index = self.find_bracket_match(
                             instruction_index, False
                         )
-                        instruction_index += 1
+            instruction_index += 1
 
     """
     # Find the location of the corresponding bracket to the one at *start*
@@ -65,3 +65,15 @@ class Brainfuck:
         # Didn't find a match
         print(f"Error: could not find match for {start_bracket} at {start}.")
         return start
+
+
+"""Simulate a 1-byte unsigned integer"""
+
+
+def clamp0_255_wraparound(num: int) -> int:
+    if num > 255:
+        return 0
+    elif num < 0:
+        return 255
+    else:
+        return num
